@@ -38,9 +38,7 @@ EduLearn/
 │   └── main.min.css   # Production CSS
 ├── js/                # JavaScript files
 │   ├── main.js        # Main application logic
-│   └── legacy.js      # Legacy JavaScript
-├── legacy/            # Legacy files
-└── package.json       # Project configuration
+└── README.md          # Project description
 ```
 
 ## Getting Started

@@ -45,8 +45,7 @@ EduLearn/
 
 ### Prerequisites
 
-- Node.js (for development tools)
-- npm (comes with Node.js)
+- Sass (CSS preprocessor)
 
 ### Installation
 
@@ -57,36 +56,47 @@ EduLearn/
    cd EduLearn
    ```
 
-2. Install dependencies:
+2. Install Sass globally:
    ```bash
-   npm install
+   npm install -g sass
    ```
 
-### Development
+   Or using other package managers:
+   ```bash
+   # Using Homebrew (macOS)
+   brew install sass/sass/sass
 
-To start development with automatic CSS compilation:
+   # Using Chocolatey (Windows)
+   choco install sass
+   ```
 
-```bash
-npm run dev
-```
+### Building CSS
 
-This will watch for SCSS changes and automatically compile them with source
-maps.
-
-### Building for Production
-
-To build optimized CSS for production:
+To compile SCSS to CSS:
 
 ```bash
-npm run build
+./build-css.sh
 ```
 
-## Available Scripts
+This script will:
+- Compile `scss/main.scss` to `styles.css`
+- Generate compressed CSS for production
+- Check for Sass installation automatically
 
-- `npm run dev` - Start development mode with file watching and source maps
-- `npm run build` - Build optimized CSS for production
-- `npm run build:css` - Compile SCSS to compressed CSS
-- `npm run watch:css` - Watch SCSS files and compile on changes
+### Manual Compilation
+
+You can also compile CSS manually using Sass:
+
+```bash
+# For development (expanded with source maps)
+sass scss/main.scss styles.css --style=expanded --source-map
+
+# For production (compressed)
+sass scss/main.scss styles.css --style=compressed --no-source-map
+
+# Watch mode for development
+sass scss/main.scss styles.css --watch --style=expanded
+```
 
 ## License
 

@@ -1,0 +1,107 @@
+// Features Section
+.features {
+  padding: 100px 0;
+  background: $white;
+}
+
+.features-header {
+  text-align: center;
+  margin-bottom: 4rem;
+
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: $text-primary;
+  }
+
+  p {
+    font-size: 1.1rem;
+    color: $text-secondary;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.feature-card {
+  @include card-style();
+  text-align: center;
+  @include fade-in-up();
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+
+    .feature-icon {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.feature-icon {
+  @include flex-center;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, $primary-color 0%, $primary-dark 100%);
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
+  transition: all 0.3s ease;
+
+  i {
+    font-size: 2rem;
+    color: $white;
+  }
+}
+
+.feature-card {
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: $text-primary;
+  }
+
+  p {
+    color: $text-secondary;
+    line-height: 1.6;
+  }
+}
+
+// Mobile Features
+@include respond-to(mobile) {
+  .features {
+    padding: 60px 0;
+  }
+
+  .features-header {
+    margin-bottom: 2rem;
+
+    h2 {
+      font-size: 2rem;
+    }
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .feature-card {
+    padding: 20px;
+  }
+
+  .feature-icon {
+    width: 60px;
+    height: 60px;
+
+    i {
+      font-size: 1.5rem;
+    }
+  }
+}

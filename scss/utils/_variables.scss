@@ -1,0 +1,36 @@
+// Color Variables
+$primary-color: #6366f1;
+$primary-dark: #4f46e5;
+$secondary-color: #f8fafc;
+$accent-color: #10b981;
+$text-primary: #1e293b;
+$text-secondary: #64748b;
+$text-light: #94a3b8;
+$border-color: #e2e8f0;
+$success-color: #22c55e;
+$warning-color: #f59e0b;
+$error-color: #ef4444;
+$white: #ffffff;
+
+// Gradients
+$gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+// Shadows
+$shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+// Border Radius
+$border-radius: 8px;
+$border-radius-lg: 12px;
+
+// Typography
+$font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+// Breakpoints
+$mobile: 768px;
+$tablet: 1024px;
+$desktop: 1200px;
+
+// Container
+$container-max-width: 1200px;
+$container-padding: 20px;

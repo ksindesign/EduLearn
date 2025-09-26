@@ -1,0 +1,67 @@
+// Button mixin
+@mixin button-style($bg-color: $primary-color, $text-color: $white) {
+  background: $bg-color;
+  color: $text-color;
+  border: none;
+  padding: 12px 24px;
+  border-radius: $border-radius;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-lg;
+  }
+}
+
+// Flexbox center
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Responsive breakpoint mixin
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == mobile {
+    @media (max-width: #{$mobile - 1px}) {
+      @content;
+    }
+  }
+  @if $breakpoint == tablet {
+    @media (max-width: #{$tablet - 1px}) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop {
+    @media (min-width: $desktop) {
+      @content;
+    }
+  }
+}
+
+// Card styling
+@mixin card-style($padding: 30px) {
+  background: $white;
+  border-radius: $border-radius-lg;
+  box-shadow: $shadow-lg;
+  padding: $padding;
+  transition: all 0.3s ease;
+}
+
+// Animation fade in
+@mixin fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+
+  &.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

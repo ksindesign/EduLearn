@@ -1,0 +1,24 @@
+{
+  "name": "edulearn-website",
+  "version": "1.0.0",
+  "description": "EduLearn - Online Learning Platform",
+  "main": "index.html",
+  "scripts": {
+    "build:css": "sass scss/main.scss styles.css --style=compressed",
+    "watch:css": "sass scss/main.scss styles.css --watch --style=expanded",
+    "dev": "sass scss/main.scss styles.css --watch --style=expanded --source-map",
+    "build": "npm run build:css"
+  },
+  "devDependencies": {
+    "sass": "^1.69.5"
+  },
+  "keywords": [
+    "education",
+    "learning",
+    "sass",
+    "scss",
+    "website"
+  ],
+  "author": "",
+  "license": "MIT"
+}

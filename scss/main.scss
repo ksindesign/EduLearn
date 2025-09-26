@@ -1,0 +1,23 @@
+// Main SCSS file - uses all modules
+// ==============================================
+
+// 1. Utils (must be first to define variables and mixins)
+@use 'utils/variables';
+@use 'utils/mixins';
+@use 'utils/animations';
+
+// 2. Base styles
+@use 'base/reset';
+
+// 3. Layout components
+@use 'layout/navigation';
+@use 'layout/hero';
+@use 'layout/footer';
+
+// 4. UI Components
+@use 'components/buttons';
+@use 'components/features';
+@use 'components/courses';
+@use 'components/contact';
+@use 'components/auth';
+@use 'components/error';

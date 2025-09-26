@@ -1,0 +1,131 @@
+// Navigation Styles
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid $border-color;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.nav-container {
+  @include flex-center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  max-width: $container-max-width;
+  margin: 0 auto;
+}
+
+.nav-logo {
+  @include flex-center;
+  gap: 10px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: $text-primary;
+  text-decoration: none;
+
+  i {
+    color: $primary-color;
+    font-size: 1.8rem;
+  }
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+
+  li a {
+    color: $text-primary;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $primary-color;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: $primary-color;
+      transition: width 0.3s ease;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+}
+
+.nav-buttons {
+  @include flex-center;
+  gap: 1rem;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+
+  span {
+    width: 25px;
+    height: 3px;
+    background: $text-primary;
+    transition: all 0.3s ease;
+  }
+
+  &.active {
+    span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    span:nth-child(2) {
+      opacity: 0;
+    }
+
+    span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -6px);
+    }
+  }
+}
+
+// Mobile Navigation
+@include respond-to(mobile) {
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    flex-direction: column;
+    background: $white;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: $shadow-lg;
+    padding: 2rem 0;
+
+    &.active {
+      left: 0;
+    }
+
+    li {
+      margin: 1rem 0;
+    }
+  }
+
+  .nav-buttons {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
